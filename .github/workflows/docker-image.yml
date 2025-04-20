@@ -42,7 +42,7 @@ jobs:
         cp /home/runner/work/docker_build/docker_build/webapp/target/webapp.war .
         ls -ltr
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag ${{ DOCKER_IMAGE_NAME }}:${{ DOCKER_TAG }}
+      run: docker build . --file Dockerfile --tag $DOCKER_IMAGE_NAME:$DOCKER_TAG
     - name: show images
       run: |
         docker images
