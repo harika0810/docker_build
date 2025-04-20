@@ -39,7 +39,7 @@ jobs:
         cp /home/runner/work/docker_build/docker_build/webapp/target/webapp.war .
         ls -ltr
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag ${{ github.event.inputs.docker-image-name }}:$(date +%s)
+      run: docker build . --file Dockerfile --tag ${{ github.event.inputs.docker-image-name }}:${{ github.event.inputs.docker-tag }}
     - name: show images
       run: |
         docker images
