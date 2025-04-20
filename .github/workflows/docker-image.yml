@@ -9,11 +9,11 @@ on:
       docker-image-name:
         description: 'Docker Image Name'
         required: true
-        default: 'test123'
+        default: 'test11111'
       docker-tag:
         description: 'Docker Tag'
         required: true
-        default: 'latest'
+        default: 'latest1'
 jobs:
 
   build-war:
