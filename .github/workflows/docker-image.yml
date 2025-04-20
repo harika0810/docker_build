@@ -16,7 +16,7 @@ on:
         default: 'latest1'
 
 jobs:
-  build-war:
+  build-war-image :
     runs-on: ubuntu-latest
     env:
       DOCKER_IMAGE_NAME: ${{ github.event.inputs.docker-image-name || 'default-image-name' }}
