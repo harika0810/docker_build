@@ -5,6 +5,14 @@ on:
     branches: [ "main" ]
     
   workflow_dispatch:
+    inputs:
+      docker-image-name:
+        description: 'Docker Image Name'
+        required: true
+      docker-tag:
+        description: 'Docker Tag'
+        required: true
+        default: 'latest'
 jobs:
 
   build-war:
