@@ -39,3 +39,7 @@ jobs:
         ls -ltr
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag ${{ github.event.inputs.docker-image-name }}:$(date +%s)
+    - name: show images
+      run: |
+        docker images
+        
