@@ -9,6 +9,7 @@ on:
       docker-image-name:
         description: 'Docker Image Name'
         required: true
+        default: test123
       docker-tag:
         description: 'Docker Tag'
         required: true
