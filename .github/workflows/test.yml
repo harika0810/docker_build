@@ -1,0 +1,6 @@
+name: Testdummy
+
+on:
+  push:
+     branches:
+     - main 
