@@ -1,9 +1,9 @@
 name: Docker Image CI
 
 on:
-  push:
-    branches:
-      - "main"
+  # push:
+  #   branches:
+  #     - "main"
   workflow_dispatch:
     inputs:
       docker-image-name:
@@ -44,3 +44,14 @@ jobs:
       - name: show images
         run: |
           docker images
+      - name: Docker Hub Login
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        run: echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin
+
+      - name: Push to Docker Hub
+        run: docker push harikapilli/githubactions:${DOCKER_TAG}
+
+      - name: Show Docker images
+        run: docker images
